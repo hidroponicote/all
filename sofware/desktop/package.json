@@ -1,0 +1,67 @@
+{
+  "name": "hope",
+  "productName": "HOPE Desktop Manager",
+  "version": "1.0.0",
+  "description": "This app is make to electronjs, it's manager system hidroponicte for desktop",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "mongodb": "cd mongodb && ./start.sh",
+    "webpack": "npx webpack",
+    "build": "webpack --config webpack.prod.js",
+    "build-dev" : "webpack-dev-server --open --config webpack.dev.js",
+    "start": "yarn build && electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . hidroponicote-desktop --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"HOPE Desktop Manager\"",
+    "package-linux": "electron-packager . hidroponicote-desktop --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds",
+    "package-all": "yarn package-mac && yarn package-linux && yarn package-win && yarn dist",
+    "deb64": "electron-installer-debian --src dist/app-linux-x64/ --dest dist/installers/ --arch amd64"
+  },
+  "keywords": [
+    "desktop",
+    "hidroponicote",
+    "hidroponic",
+    "maganer",
+    "system",
+    "cristian",
+    "niño"
+  ],
+  "author": "Cristian Niño",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.0",
+    "electron": "^3.0.0",
+    "electron-builder": "^20.28.4",
+    "electron-installer-debian": "^1.0.0",
+    "electron-packager": "^12.2.0",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.21.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-middleware": "^3.4.0",
+    "webpack-merge": "^4.1.4"
+  },
+  "build": {
+    "appId": "hidroponicote-electron",
+    "asar": true,
+    "mac": {
+      "category": "hidroponia"
+    }
+  },
+  "dependencies": {
+    "ajv": "^6.5.4",
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "toastr": "^2.1.4",
+    "vue": "^2.5.17"
+  },
+  "alias": {
+    "vue": "./node_modules/vue/dist/vue.common.js"
+  }
+}

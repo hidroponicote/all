@@ -1,0 +1,8 @@
+directories:
+  output: dist
+  buildResources: build
+appId: hidroponicote-electron
+asar: true
+mac:
+  category: your.app.category.type
+electronVersion: 3.0.0

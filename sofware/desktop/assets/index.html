@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hidroponicote</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <span class="dot" id="state">
+           <span class="tooltiptext" id="tooltipTextState"></span>
+        </span>
+        <span class="bluetooth-container" id="watterPumpContainer">
+          <p id="watterPumpTitle">Bomba de agua: </p>
+          <p name="watterPumpOn" id="watterPumpOn">On</p>
+          <p name="watterPumpOff" id="watterPumpOff">Off</p>
+        </span>
+        <span class="bluetooth-container" id="bluetooth">
+          BT
+          <span class="tooltiptext" id="tooltipTextBluetooth"></span>
+        </span>
+      </header>
+      <aside class="aside-container">
+        <nav>
+          <ul class="menu-container" id="menu-primary" v-for="item in list1">
+            <li>{{ item.title }}</li>
+          </ul>
+          <ul class="menu-container" id="menu-second">
+            <li>CONFIG</li>
+          </ul>
+        </nav>
+      </aside>
+      <article class="article-container">
+        <div class="chart">
+          <p class="chart-title">Temp Sustrato (C°):</p>
+          <div class="canvas-charts-container">
+            <canvas id="canvasChart1" width="300" height="200"></canvas>
+          </div>
+        </div>
+        <div class="chart">
+          <p class="chart-title">Ph Sustrato:</p>
+          <div class="canvas-charts-container">
+            <canvas id="canvasChart2" width="300" height="200"></canvas>
+          </div>
+        </div>
+        <div class="chart">
+          <p class="chart-title">Nutrientes (us/cm)</p>
+          <div class="canvas-charts-container">
+            <canvas id="canvasChart3" width="300" height="200"></canvas>
+          </div>
+        </div>
+        <div class="chart">
+          <p class="chart-title">Oxigeno (ppm):</p>
+          <div class="canvas-charts-container">
+            <canvas id="canvasChart4" width="300" height="200"></canvas>
+          </div>
+        </div>
+      </article>
+    </div>
+  </body>
+  <script src="js/app.bundle.js"></script>
+</html>
