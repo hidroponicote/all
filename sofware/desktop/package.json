@@ -57,7 +57,7 @@
   "dependencies": {
     "ajv": "^6.5.4",
     "express": "^4.16.4",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "toastr": "^2.1.4",
     "vue": "^2.5.17"
   },
